@@ -1,10 +1,13 @@
+import 'dart:ui';
+
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:techastra/components/bottomsheet.dart';
 import 'package:techastra/components/components.dart';
 import 'package:techastra/utils/colors.dart';
 import 'package:techastra/utils/text.dart';
-class NewsBox extends StatelessWidget {
+
+class NewsBox extends StatefulWidget {
   final String imageurl, title, time, description, url;
   const NewsBox(
       {Key? key,
@@ -15,15 +18,27 @@ class NewsBox extends StatelessWidget {
       required this.url})
       : super(key: key);
 
+  static bool open = false;
+
+  @override
+  State<NewsBox> createState() => _NewsBoxState();
+}
+
+class _NewsBoxState extends State<NewsBox> {
   @override
   Widget build(BuildContext context) {
     // var h = MediaQuery.of(context).size.height;
+
     var w = MediaQuery.of(context).size.width;
     return Column(
       children: [
         InkWell(
           onTap: () {
-            showMyBottomSheet(context, title, description, imageurl, url);
+            setState(() {
+              NewsBox.open = true;
+            });
+            showMyBottomSheet(context, widget.title, widget.description,
+                widget.imageurl, widget.url);
           },
           child: Container(
             padding: EdgeInsets.all(20),
@@ -33,7 +48,7 @@ class NewsBox extends StatelessWidget {
             child: Row(
               children: [
                 CachedNetworkImage(
-                  imageUrl: imageurl,
+                  imageUrl: widget.imageurl,
                   imageBuilder: (context, imageProvider) => Container(
                     width: 60,
                     height: 60,
@@ -54,10 +69,12 @@ class NewsBox extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       modifiedText(
-                          color: AppColors.white, size: 16, text: title),
+                          color: AppColors.white, size: 16, text: widget.title),
                       SizedBox(height: 5),
                       modifiedText(
-                          color: AppColors.lightwhite, size: 12, text: time),
+                          color: AppColors.lightwhite,
+                          size: 12,
+                          text: widget.time),
                     ],
                   ),
                 ),

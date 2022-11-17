@@ -4,16 +4,22 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:techastra/components/components.dart';
+import 'package:techastra/components/newsbox.dart';
 import 'package:techastra/utils/text.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 void showMyBottomSheet(
     BuildContext context, String title, String description, imageurl, url) {
+ 
+  
   showBottomSheet(
       backgroundColor: Colors.grey,
       shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.only(
-              topLeft: Radius.circular(20), topRight: Radius.circular(20),),),
+        borderRadius: BorderRadius.only(
+          topLeft: Radius.circular(20),
+          topRight: Radius.circular(20),
+        ),
+      ),
       elevation: 20,
       context: context,
       builder: (context) {
@@ -34,6 +40,8 @@ _launchURL(String url) async {
   }
 }
 
+
+
 //your bottom sheet widget class
 //you can put your things here, like buttons, callbacks and layout
 class MyBottomSheetLayout extends StatelessWidget {
@@ -46,6 +54,8 @@ class MyBottomSheetLayout extends StatelessWidget {
       required this.imageurl,
       required this.url})
       : super(key: key);
+
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -67,14 +77,15 @@ class MyBottomSheetLayout extends StatelessWidget {
               text: TextSpan(
                 children: <TextSpan>[
                   TextSpan(
-                      text: 'Read Full Article',
-                      recognizer: TapGestureRecognizer()
-                        ..onTap = () {
-                          _launchURL(url);
-                        },
-                      style: GoogleFonts.lato(
-                        color: Colors.black54,
-                      ),),
+                    text: 'Read Full Article',
+                    recognizer: TapGestureRecognizer()
+                      ..onTap = () {
+                        _launchURL(url);
+                      },
+                    style: GoogleFonts.lato(
+                      color: Colors.black54,
+                    ),
+                  ),
                 ],
               ),
             ),

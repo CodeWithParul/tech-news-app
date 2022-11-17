@@ -1,11 +1,11 @@
 // ignore_for_file: prefer_const_constructors
 
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:techastra/backend/functions.dart';
+import 'package:techastra/components/newsbox.dart';
 import 'package:techastra/utils/colors.dart';
+import 'package:techastra/pages/home.dart';
 
 class SearchBar extends StatefulWidget {
   const SearchBar({Key? key}) : super(key: key);
@@ -38,6 +38,14 @@ class _SearchBarState extends State<SearchBar> {
                 SizedBox(width: 10),
                 Expanded(
                   child: TextField(
+                    onTap: () {
+                      if (NewsBox.open == true) {
+                        Navigator.pop(context);
+                        setState(() {
+                          NewsBox.open = false;
+                        });
+                      }
+                    },
                     controller: SearchBar.searchController,
                     decoration: InputDecoration(
                       hintText: 'Search a Keyword or a Phrase',
@@ -50,8 +58,14 @@ class _SearchBarState extends State<SearchBar> {
             ),
           ),
         ),
-        InkWell(
+        InkWell( 
           onTap: () {
+            if (NewsBox.open == true) {
+                        Navigator.pop(context);
+                        setState(() {
+                          NewsBox.open = false;
+                        });
+                      }
             FocusScope.of(context).unfocus();
             fetchnews();
           },
@@ -59,11 +73,10 @@ class _SearchBarState extends State<SearchBar> {
             width: 45,
             height: 45,
             decoration: BoxDecoration(
-              color: AppColors.darkgrey,
-              shape: BoxShape.circle
-            ),
-            child: Icon(Icons.search,
-            color: AppColors.white,
+                color: AppColors.darkgrey, shape: BoxShape.circle),
+            child: Icon(
+              Icons.search,
+              color: AppColors.white,
             ),
           ),
         ),

@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
-import 'package:techastra/components/searchbar.dart';
-import 'package:techastra/utils/key.dart';
+import 'package:newsio/components/searchbar.dart';
+import 'package:newsio/utils/key.dart';
 
 Future<List> fetchnews() async {
   final response = await http.get(

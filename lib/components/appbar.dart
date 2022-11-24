@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:techastra/utils/colors.dart';
-import 'package:techastra/utils/text.dart';
+import 'package:newsio/utils/colors.dart';
+import 'package:newsio/utils/text.dart';
 
 class appbar extends StatelessWidget implements PreferredSizeWidget {
   appbar({Key? key})
@@ -12,8 +12,7 @@ class appbar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      actions: [
-        ],
+      actions: [],
       backgroundColor: AppColors.black,
       elevation: 0,
       title: Container(
@@ -21,8 +20,8 @@ class appbar extends StatelessWidget implements PreferredSizeWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              boldText(text: 'Tech', size: 20, color: AppColors.primary),
-              modifiedText(text: 'Astra', size: 20, color: AppColors.lightwhite)
+              boldText(text: 'News', size: 20, color: AppColors.primary),
+              modifiedText(text: 'io', size: 20, color: AppColors.lightwhite)
             ],
           )),
       centerTitle: true,

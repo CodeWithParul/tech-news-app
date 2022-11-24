@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:techastra/backend/functions.dart';
-import 'package:techastra/components/appbar.dart';
-import 'package:techastra/components/newsbox.dart';
-import 'package:techastra/components/searchbar.dart';
-import 'package:techastra/utils/colors.dart';
+import 'package:newsio/backend/functions.dart';
+import 'package:newsio/components/appbar.dart';
+import 'package:newsio/components/newsbox.dart';
+import 'package:newsio/components/searchbar.dart';
+import 'package:newsio/utils/colors.dart';
 
 import '../utils/constants.dart';
 
@@ -29,14 +29,14 @@ class _HomeState extends State<Home> {
       setState(() {
         NewsBox.open = false;
       });
-    } 
+    }
   }
 
   @override
   Widget build(BuildContext context) {
     var w = MediaQuery.of(context).size.width;
     return GestureDetector(
-        onTap: setValue,
+      onTap: setValue,
       child: Scaffold(
           backgroundColor: AppColors.black,
           appBar: appbar(),

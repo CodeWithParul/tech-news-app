@@ -1,8 +1,8 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
-import 'package:techastra/pages/home.dart';
-import 'package:techastra/utils/colors.dart';
+import 'package:newsio/pages/home.dart';
+import 'package:newsio/utils/colors.dart';
 
 void main() {
   runApp(const MyApp());
@@ -22,7 +22,7 @@ class _MyAppState extends State<MyApp> {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         brightness: Brightness.dark,
-        primaryColor: AppColors.primary, 
+        primaryColor: AppColors.primary,
       ),
       home: Home(),
     );

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:techastra/utils/text.dart';
+import 'package:newsio/utils/text.dart';
 
 import '../utils/colors.dart';
 

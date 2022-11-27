@@ -3,15 +3,13 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:techastra/components/components.dart';
-import 'package:techastra/components/newsbox.dart';
-import 'package:techastra/utils/text.dart';
+import 'package:newsio/components/components.dart';
+import 'package:newsio/components/newsbox.dart';
+import 'package:newsio/utils/text.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 void showMyBottomSheet(
     BuildContext context, String title, String description, imageurl, url) {
- 
-  
   showBottomSheet(
       backgroundColor: Colors.grey,
       shape: RoundedRectangleBorder(
@@ -40,8 +38,6 @@ _launchURL(String url) async {
   }
 }
 
-
-
 //your bottom sheet widget class
 //you can put your things here, like buttons, callbacks and layout
 class MyBottomSheetLayout extends StatelessWidget {
@@ -54,7 +50,6 @@ class MyBottomSheetLayout extends StatelessWidget {
       required this.imageurl,
       required this.url})
       : super(key: key);
-
 
   @override
   Widget build(BuildContext context) {

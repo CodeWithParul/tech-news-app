@@ -2,10 +2,10 @@
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:techastra/backend/functions.dart';
-import 'package:techastra/components/newsbox.dart';
-import 'package:techastra/utils/colors.dart';
-import 'package:techastra/pages/home.dart';
+import 'package:newsio/backend/functions.dart';
+import 'package:newsio/components/newsbox.dart';
+import 'package:newsio/utils/colors.dart';
+import 'package:newsio/pages/home.dart';
 
 class SearchBar extends StatefulWidget {
   const SearchBar({Key? key}) : super(key: key);
@@ -58,14 +58,14 @@ class _SearchBarState extends State<SearchBar> {
             ),
           ),
         ),
-        InkWell( 
+        InkWell(
           onTap: () {
             if (NewsBox.open == true) {
-                        Navigator.pop(context);
-                        setState(() {
-                          NewsBox.open = false;
-                        });
-                      }
+              Navigator.pop(context);
+              setState(() {
+                NewsBox.open = false;
+              });
+            }
             FocusScope.of(context).unfocus();
             fetchnews();
           },

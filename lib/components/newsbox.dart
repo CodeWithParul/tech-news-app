@@ -2,10 +2,10 @@ import 'dart:ui';
 
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:techastra/components/bottomsheet.dart';
-import 'package:techastra/components/components.dart';
-import 'package:techastra/utils/colors.dart';
-import 'package:techastra/utils/text.dart';
+import 'package:newsio/components/bottomsheet.dart';
+import 'package:newsio/components/components.dart';
+import 'package:newsio/utils/colors.dart';
+import 'package:newsio/utils/text.dart';
 
 class NewsBox extends StatefulWidget {
   final String imageurl, title, time, description, url;
